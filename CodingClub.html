@@ -1,0 +1,58 @@
+<!doctype html>
+<style>
+html {
+  vertical-align: middle;
+}
+button {
+  background-color: #DD6E42;
+}
+
+body {
+  background-image: url('https://images.pond5.com/modern-blue-business-technology-background-footage-077433698_prevstill.jpeg');
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: arial;
+  font-size: 16px;
+  text
+}
+
+</style>
+
+<html>
+<h1>Welcome to the LHS Coding Club!</h1>
+<h2>Please enter your name to sign in:</h2>
+<h2>
+<input id="name" placeholder="Enter your name"></input>
+<button id="enter" onclick="send()">Enter</button>
+<button onclick="display()">Display</button>
+</html>
+<script>
+var list = [];
+var enter = document.getElementById("name");
+enter.addEventListener("keyup", function(event){
+  if(event.keyCode === 13){
+    document.getElementById("enter").click();
+  }
+});
+
+function send(){
+  list.push(document.getElementById("name").value);
+  document.getElementById("name").value = ""
+}
+
+function display(){
+  list.sort();
+  alert(list)
+}
+</script>
